@@ -28,7 +28,7 @@
     <mat-divider></mat-divider>
     <mat-card-actions class="justify-content-between">
       <button
-        mat-button
+        mat-stroked-button
         color="primary"
         [routerLink]="'/heroes/edit/' + hero.id"
       >
@@ -36,9 +36,13 @@
         Editar
       </button>
 
-      <button mat-button color="primary" [routerLink]="'/heroes/' + hero.id">
+      <button
+        mat-stroked-button
+        color="primary"
+        [routerLink]="'/heroes/' + hero.id"
+      >
         <mat-icon>more_horiz</mat-icon>
-        Ver más
+        Más
       </button>
     </mat-card-actions>
   </div>
