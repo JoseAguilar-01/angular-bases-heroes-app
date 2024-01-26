@@ -1,1 +1,74 @@
-<h1>{{ hero?.superhero }}</h1>
+<ng-template #spinner>
+  <mat-grid-list cols="1" rowHeight="5:3">
+    <mat-grid-tile>
+      <mat-spinner diameter="50"></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>
+
+<div class="grid" *ngIf="hero; else spinner">
+  <mat-card class="col-12 sm:col-6 mx-auto px-3">
+    <div class="grid">
+      <mat-card-header class="col-12 md:col-6 md:hidden">
+        <mat-card-title>{{ hero.superhero }}</mat-card-title>
+        <mat-card-subtitle>{{ hero.alter_ego }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <img
+        mat-card-image
+        [src]="hero | heroImage"
+        [alt]="hero.superhero"
+        class="mt-2 col-12 lg:mt-0 lg:col-6"
+      />
+
+      <div class="flex flex-column col-12 lg:col-6">
+        <mat-card-header class="hidden lg:block lg:p-0">
+          <mat-card-title>{{ hero.superhero }}</mat-card-title>
+          <mat-card-subtitle>{{ hero.alter_ego }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="px-0 lg:p-0 flex flex-column h-full">
+          <mat-list class="flex flex-column gap-2">
+            <mat-list-item class="px-0">
+              <strong>Primera aparición:</strong> <br />
+              {{ hero.first_appearance }}
+            </mat-list-item>
+
+            <mat-list-item class="px-0">
+              <strong>Publicador:</strong> <br />
+              {{ hero.publisher }}
+            </mat-list-item>
+
+            <mat-list-item class="px-0">
+              <mat-chip-listbox>
+                <mat-chip
+                  *ngFor="let character of hero.characters.split(', ', 3)"
+                >
+                  {{ character }}
+                </mat-chip>
+              </mat-chip-listbox>
+            </mat-list-item>
+          </mat-list>
+
+          <button
+            mat-raised-button
+            color="primary"
+            class="mt-auto"
+            (click)="goBack()"
+          >
+            <mat-icon>arrow_back_ios</mat-icon>
+            Regresar
+          </button>
+        </mat-card-content>
+      </div>
+    </div>
+
+    <!-- <ma class="col-12 sm:col-3 mx-auto">
+      <mat-card-header class="px-0">
+        <mat-card-title>Información</mat-card-title>
+      </mat-card-header>
+
+
+    </ma> -->
+  </mat-card>
+</div>

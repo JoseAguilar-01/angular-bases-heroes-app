@@ -29,9 +29,11 @@ export class HeroPageComponent implements OnInit {
         return this.router.navigate(['/heroes/list']);
       }
 
-      this.hero = hero;
-
-      return;
+      return (this.hero = hero);
     });
+  }
+
+  goBack() {
+    this.router.navigateByUrl('/heroes/list');
   }
 }
