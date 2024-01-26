@@ -5,8 +5,20 @@
 html,
 body {
   height: 100%;
+  background-color: #151515;
+  color: white;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }
