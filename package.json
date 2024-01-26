@@ -8,7 +8,8 @@
     "build:postcss": "ng build && npm run postcss",
     "postcss": "postcss dist/**/*.css --replace",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "json-server": "npx json-server data/db.json"
   },
   "private": true,
   "dependencies": {
@@ -35,6 +36,7 @@
     "@types/jasmine": "~5.1.4",
     "autoprefixer": "^10.4.17",
     "jasmine-core": "~5.1.1",
+    "json-server": "^1.0.0-alpha.22",
     "karma": "~6.4.2",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.1",
